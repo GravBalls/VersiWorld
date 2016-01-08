@@ -2,7 +2,7 @@
 using System.Collections;
 using System;
 
-public class GravityRight : MonoBehaviour, Command
+public class GravityRight : MonoBehaviour
 {
     public void Execute(GameObject actor)
     {

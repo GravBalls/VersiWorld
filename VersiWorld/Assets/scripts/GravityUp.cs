@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System;
 
-public class Gravity : MonoBehaviour, Command
+public class Gravity : MonoBehaviour
 {
     
     

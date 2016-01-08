@@ -4,7 +4,7 @@ using System.Collections;
 
 public class InputHandler : MonoBehaviour
 {
-    public Command buttonX = new Gravity;
+    public Command buttonX = null;
     public Command buttonY = null;
 
     public Image currentImage;
@@ -14,23 +14,55 @@ public class InputHandler : MonoBehaviour
         Command command = HandleInput();
         if(command != null)
         {
-            command.Execute(gameObject);
+            //command.Execute(gameObject);
         }
     }
     public Command HandleInput()
     {
+        //rotate grav clockwise
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            return buttonX;
-        }
+            Vector3 grav = Physics.gravity;
+            //is gravity now pointing up/down
+            if (Mathf.Approximately(grav.x, 0))
+            {
+                float value = grav.y;
+                //is gravity pointing down
+                if (value < 0)
+                {
+                    //set grav to left
+                    grav.x = value;
+                    grav.y = 0;
+                }
+                else
+                {
+                    //set grav to right
+                    grav.x = value;
+                    grav.y = 0;
+                }
+            }
+            else
+            {
+                float value = grav.x;
+                //is gravity pointing left
+                if (value < 0)
+                {
+                    //set grav to up
+                    grav.y = -value;
+                    grav.x = 0;
+                }
+                else
+                {
+                    //set grav to down
+                    grav.y = -value;
+                    grav.x = 0;
+                }
+            }
 
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            return buttonY;
+            Physics.gravity = grav;
         }
-
-        else return null;
+        
+        return buttonX;
     }
 
-
-}
+    }
