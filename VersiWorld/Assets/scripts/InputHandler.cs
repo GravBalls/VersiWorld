@@ -4,6 +4,11 @@ using System.Collections;
 
 public class InputHandler : MonoBehaviour
 {
+    public Image up;
+    public Image right;
+    public Image down;
+    public Image left;
+
     public Command buttonX = null;
     public Command buttonY = null;
 
@@ -33,12 +38,14 @@ public class InputHandler : MonoBehaviour
                     //set grav to left
                     grav.x = value;
                     grav.y = 0;
+                    UpdateColor(down, left);
                 }
                 else
                 {
                     //set grav to right
                     grav.x = value;
                     grav.y = 0;
+                    UpdateColor(up, right);
                 }
             }
             else
@@ -50,12 +57,14 @@ public class InputHandler : MonoBehaviour
                     //set grav to up
                     grav.y = -value;
                     grav.x = 0;
+                    UpdateColor(left, up);
                 }
                 else
                 {
                     //set grav to down
                     grav.y = -value;
                     grav.x = 0;
+                    UpdateColor(right, down);
                 }
             }
 
@@ -63,6 +72,18 @@ public class InputHandler : MonoBehaviour
         }
         
         return buttonX;
+    }
+
+    void UpdateColor(Image old, Image newby)
+    {
+        Color c = old.color;
+        c.a = 0;
+        old.color = c;
+        //old.color = new Color(old.color.r, old.color.g, old.color.b, 127);
+        c = newby.color;
+        c.a = 255;
+        newby.color = c;
+        //newby.color = new Color(newby.color.r, newby.color.g, newby.color.b, 255);
     }
 
     }
