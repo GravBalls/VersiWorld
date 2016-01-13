@@ -1,0 +1,17 @@
+mechanics for versiworld game
+
+Gravity - main mechanism for controlling player - i think maybe going with dpad/arrow keys only
+
+Magnet - pulls player towards object - could go +/- and also repel?
+ice - slick - player slides along it when inertia onlanding ?
+bouncy - player bounces with proper reflection angles for free from physics engine
+
+Have 'safe' spots that player must be in if touching a wall/platform (depends on gravity direction :)) otherwise player gets destroyed if touches 
+non-safe area.  using only grav as control, you guide? the player through the level using different mechanics to help.
+
+or have death mechanics that player must avoid  while getting through?
+
+
+
+
+	
