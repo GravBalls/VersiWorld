@@ -15,6 +15,7 @@ public class CommandChildExample : CommandParent {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         mySpriteRenderer.color = linkColor;
         mySpriteRenderer.sprite = startState;
+        actionDescription = "Change Direction";
 	}
 
     //this is overrided mainly so it can change it's color when linked
