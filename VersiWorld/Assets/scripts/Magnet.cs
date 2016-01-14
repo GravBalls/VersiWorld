@@ -5,30 +5,45 @@ public class Magnet : MonoBehaviour
 {
     public float force;
 
-    //BoxCollider magnetTrigger = new BoxCollider();
-
-    void Start()
+    public bool Activated
     {
-        
+        get
+        {
+            return isActivated;
+        }
+
+        set
+        {
+            isActivated = value;
+            if(isActivated)
+            {
+                rend.material.SetColor("_EmissionColor", Color.yellow);
+            }
+            else
+            {
+                rend.material.SetColor("_EmissionColor", Color.black);
+            }
+        }
+
     }
 
-    void OnDrawGizmos()
-    {
-        Vector3 position = transform.position;
-        position.y = 0;
-        //transform.position = position;
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(position, transform.lossyScale);
+    bool isActivated;
+    Renderer rend;
+    Rigidbody rBody;
+
+    void Awake()
+    {
+        rend = GetComponent<Renderer>();
+        rBody = GetComponent<Rigidbody>();
     }
 
     void OnTriggerStay(Collider other)
     {   
-        if(other.tag == "Player")
+        if(isActivated && other.tag == "Player")
         {
             Vector3 direction = Vector3.Normalize(transform.position - other.transform.position);
-            other.GetComponent<Rigidbody>().AddForce(direction * force * Time.fixedDeltaTime);
-            Debug.Log(direction);
+            other.GetComponent<Rigidbody>().AddForce((direction * force * Time.fixedDeltaTime) + rBody.velocity);
         }
     }
 
