@@ -15,6 +15,7 @@ public class MaterialSwapScript : CommandParent {
     public Color endingColor;
 
     BoxCollider myBoxCollider;
+    Material myMaterial;
 
     // Use this for initialization
     void Start () {
@@ -24,6 +25,9 @@ public class MaterialSwapScript : CommandParent {
         
         //default link color
         actionDescription = startingMaterialName;
+
+        myMaterial = GetComponent<Renderer>().material;
+        myMaterial.color = startingColor;
 	}
 
 
@@ -36,11 +40,13 @@ public class MaterialSwapScript : CommandParent {
             {
                 myBoxCollider.material = endingMaterial;
                 actionDescription = endingMaterialName;
+                myMaterial.color = endingColor;
             }
             else
             {
                 myBoxCollider.material = startingMaterial;
                 actionDescription = startingMaterialName;
+                myMaterial.color = startingColor;
             }
             isFirstState = !isFirstState;
         }

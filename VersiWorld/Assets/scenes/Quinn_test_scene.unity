@@ -348,13 +348,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22e77544446066640b636545794a1d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isActivatable: 0
+  isActivatable: 1
   startingMaterialName: 
-  startingMaterial: {fileID: 13400000, guid: e8c9210d393046c49870d20f8cce03e6, type: 2}
-  startingColor: {r: 0, g: 0, b: 0, a: 0}
+  startingMaterial: {fileID: 13400000, guid: aa766c6db69b1d3468486331e29f7437, type: 2}
+  startingColor: {r: .618273497, g: .614619374, b: .720588207, a: 0}
   endingMaterialName: 
   endingMaterial: {fileID: 13400000, guid: 335af82922ee0be4c88baef8e67db612, type: 2}
-  endingColor: {r: 0, g: 0, b: 0, a: 0}
+  endingColor: {r: .536764741, g: .34337157, b: .34337157, a: 0}
 --- !u!1 &1050505964
 GameObject:
   m_ObjectHideFlags: 0
