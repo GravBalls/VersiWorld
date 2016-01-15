@@ -13,6 +13,8 @@ public class UIScript : MonoBehaviour {
     Text yellowButtonText;
     CommandParent yellowLink = null;
 
+    static string defaultText = "Nothing";
+
     // Use this for initialization
     void Start () {
         Text[] textComponents = GetComponentsInChildren<Text>();
@@ -34,7 +36,7 @@ public class UIScript : MonoBehaviour {
                     Debug.Log("unknow textcomponent found");
                     break;
             }
-            textComponents[i].text = "Nothing";
+            textComponents[i].text = defaultText;
         }
 	}
 	
@@ -44,5 +46,73 @@ public class UIScript : MonoBehaviour {
         {
             redButtonText.text = redLink.actionDescription;
         }
-	}
+        if (greenLink != null)
+        {
+            greenButtonText.text = greenLink.actionDescription;
+        }
+        if (blueLink != null)
+        {
+            blueButtonText.text = blueLink.actionDescription;
+        }
+        if (yellowLink != null)
+        {
+            yellowButtonText.text = yellowLink.actionDescription;
+        }
+    }
+
+    public enum UI_BUTTON
+    {
+        BUTTON_RED,
+        BUTTON_GREEN,
+        BUTTON_BLUE,
+        BUTTON_YELLOW
+    }
+
+    //ignoring the second parameter unlinks the given button
+    public void linkButton(UI_BUTTON linkedButton, CommandParent linkedObject = null) {
+        if (linkedObject == null)
+        {
+            switch (linkedButton)
+            {
+                case UI_BUTTON.BUTTON_RED:
+                    redLink = null;
+                    redButtonText.text = defaultText;
+                    break;
+                case UI_BUTTON.BUTTON_GREEN:
+                    greenLink = null;
+                    greenButtonText.text = defaultText;
+                    break;
+                case UI_BUTTON.BUTTON_BLUE:
+                    blueLink = null;
+                    blueButtonText.text = defaultText;
+                    break;
+                case UI_BUTTON.BUTTON_YELLOW:
+                    yellowLink = null;
+                    yellowButtonText.text = defaultText;
+                    break;
+            }
+        }
+        else
+        {
+            switch (linkedButton)
+            {
+                case UI_BUTTON.BUTTON_RED:
+                    redLink = linkedObject;
+                    redButtonText.text = linkedObject.actionDescription;
+                    break;
+                case UI_BUTTON.BUTTON_GREEN:
+                    greenLink = linkedObject;
+                    greenButtonText.text = linkedObject.actionDescription;
+                    break;
+                case UI_BUTTON.BUTTON_BLUE:
+                    blueLink = linkedObject;
+                    blueButtonText.text = linkedObject.actionDescription;
+                    break;
+                case UI_BUTTON.BUTTON_YELLOW:
+                    yellowLink = linkedObject;
+                    yellowButtonText.text = linkedObject.actionDescription;
+                    break;
+            }
+        }
+    }
 }
