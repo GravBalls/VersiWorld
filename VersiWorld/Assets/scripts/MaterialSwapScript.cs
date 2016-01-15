@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlatformScript : CommandParent {
+public class MaterialSwapScript : CommandParent {
 
     public bool isActivatable = false;
     bool isFirstState = true;
