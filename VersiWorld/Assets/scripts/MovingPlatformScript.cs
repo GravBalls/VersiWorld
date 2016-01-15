@@ -70,9 +70,8 @@ public class MovingPlatformScript : CommandParent {
                 if (moveType == MovementType.MOVE_PAUSE)
                 {
                     remainingPauseTime = pauseTime;
-                    pauseMovement = true;
                 }
-                if (moveType == MovementType.MOVE_ONCE)
+                if ((isActivatable && moveType != MovementType.MOVE_CONTINUOUS) || moveType == MovementType.MOVE_ONCE)
                 {
                     pauseMovement = true;
                 }
