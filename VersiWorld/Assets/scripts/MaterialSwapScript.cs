@@ -8,8 +8,11 @@ public class MaterialSwapScript : CommandParent {
 
     public string startingMaterialName;
     public PhysicMaterial startingMaterial;
+    public Color startingColor;
+
     public string endingMaterialName;
     public PhysicMaterial endingMaterial;
+    public Color endingColor;
 
     BoxCollider myBoxCollider;
 
@@ -22,6 +25,8 @@ public class MaterialSwapScript : CommandParent {
         //default link color
         actionDescription = startingMaterialName;
 	}
+
+
 
     public override void Activate()
     {
