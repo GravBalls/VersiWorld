@@ -114,6 +114,111 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2145189107}
   m_RootOrder: 0
+--- !u!1 &325550417
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 325550422}
+  - 33: {fileID: 325550421}
+  - 135: {fileID: 325550420}
+  - 23: {fileID: 325550419}
+  - 54: {fileID: 325550418}
+  - 114: {fileID: 325550423}
+  m_Layer: 0
+  m_Name: Sphere
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!54 &325550418
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325550417}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!23 &325550419
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325550417}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 1
+  m_ReflectionProbeUsage: 1
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 1
+  m_ImportantGI: 0
+  m_AutoUVMaxDistance: .5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!135 &325550420
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325550417}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!33 &325550421
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325550417}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &325550422
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325550417}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.44000006, y: 1.25, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+--- !u!114 &325550423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 325550417}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc54995635c10554e97ab7a92cb1e7b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gravity: 10
+  coolDownTimer: 1
+  currentDirection: 2
+  currentMode: 0
 --- !u!1 &362240845
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +441,7 @@ Transform:
   m_LocalScale: {x: 2, y: .25, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!114 &1040781986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,7 +469,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1050505966}
   - 212: {fileID: 1050505965}
-  - 114: {fileID: 1050505967}
   m_Layer: 0
   m_Name: command tester
   m_TagString: Untagged
@@ -410,20 +514,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!114 &1050505967
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1050505964}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a1d16f49208a12439bfca9cb8eaa843, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isActivatable: 1
-  startState: {fileID: 21300000, guid: 5e004c2cd25bfce4e87521097da9211b, type: 3}
-  secondState: {fileID: 21300000, guid: dcc4235a761dbb146b0c245de223932c, type: 3}
 --- !u!1 &1175125206
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,7 +734,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff3fa79d90fe214fa8cde315df2cc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueButtonItem: {fileID: 1040781980}
+  blueButtonItem: {fileID: 325550417}
 --- !u!4 &1586833075
 Transform:
   m_ObjectHideFlags: 0
