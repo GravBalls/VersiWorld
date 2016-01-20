@@ -41,6 +41,7 @@ public class MovingPlatformScript : CommandParent {
         if (isActivatable)
         {
             pauseMovement = true;
+            actionDescription = "Move Platform";
         }
 	}
 
