@@ -1,8 +1,15 @@
 fileFormatVersion: 2
+<<<<<<< .merge_file_a04224
+guid: efaaf08be07d1b84eb5759e79361862a
+folderAsset: yes
+timeCreated: 1452301328
+licenseType: Free
+=======
 guid: 23c758d8538b8494b891d80324cab9e3
 folderAsset: yes
 timeCreated: 1452281754
 licenseType: Pro
+>>>>>>> .merge_file_a05048
 DefaultImporter:
   userData: 
   assetBundleName: 
