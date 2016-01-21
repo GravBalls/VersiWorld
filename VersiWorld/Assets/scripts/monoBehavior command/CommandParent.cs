@@ -7,7 +7,7 @@ public class CommandParent : MonoBehaviour {
     protected bool inputLinked = false;
 
     //this is a description of the action that Activate preforms for the UI to read. (note: this text can change mid exicution and the UI should expect and handle it)
-    private string _actDescipt = "Does Nothing";
+    private string _actDescipt = "Default Text";
     public string actionDescription
     {
         get
