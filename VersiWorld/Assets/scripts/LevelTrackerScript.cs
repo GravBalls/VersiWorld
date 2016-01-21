@@ -3,6 +3,9 @@ using System.Collections;
 
 public class LevelTrackerScript : MonoBehaviour {
 
+    public bool ignoreNextLevelCalls = false;
+    public bool debugControlsAllowed = false;
+
     //int initLevel = 0;
     int firstLevel = 1;
     int lastLevel = 3;
@@ -24,14 +27,23 @@ public class LevelTrackerScript : MonoBehaviour {
             resetLevel();
         }
         //debug only
-        if (Input.GetKeyDown(KeyCode.B))
+        if (debugControlsAllowed)
         {
-            Debug.Log("Forcing Next Level...");
-            nextLevel();
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                Debug.Log("Forcing Next Level...");
+                nextLevel();
+            }
         }
     }
 
     public void nextLevel() {
+        if (ignoreNextLevelCalls)
+        {
+            Debug.Log("Level Transition Refused");
+            return;
+        }
+
         currentLevel++;
 
         if (currentLevel > lastLevel)
