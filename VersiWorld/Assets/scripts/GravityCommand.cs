@@ -45,6 +45,7 @@ public class GravityCommand : CommandParent
                 actionDescription = "Grav Reverse";
                 break;
         }
+        currentDirection = DIRECTION.DOWN;
     }
 
     void Update()
