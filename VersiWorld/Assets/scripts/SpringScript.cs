@@ -11,7 +11,7 @@ public class SpringScript : CommandParent {
     int curActiveFrames = 0;
     bool isActive = false;
 
-    Rigidbody colidedObject = null;
+    Rigidbody colidedObject = null;//this causes some really dumb behavior but it mostly works for now
 
 	// Use this for initialization
 	void Start () {
