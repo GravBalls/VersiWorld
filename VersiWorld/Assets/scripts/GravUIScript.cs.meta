@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 17ce67fb9c437734c91839cbc144996e
+timeCreated: 1453332114
+licenseType: Pro
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences:
+  - iconUp: {fileID: 21300000, guid: 5e004c2cd25bfce4e87521097da9211b, type: 3}
+  - iconRight: {fileID: 21300000, guid: 904cf98b14113194e8216c1790880aff, type: 3}
+  - iconDown: {fileID: 21300000, guid: dcc4235a761dbb146b0c245de223932c, type: 3}
+  - iconLeft: {fileID: 21300000, guid: 2ce2748e2495968438649af5d3908228, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

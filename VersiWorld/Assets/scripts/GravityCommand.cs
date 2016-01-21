@@ -31,6 +31,22 @@ public class GravityCommand : CommandParent
     private float currentCoolDownTime = 0;
     private bool isCooled = true;
 
+    void Start ()
+    {
+        switch (currentMode)
+        {
+            case SWITCH_MODE.CLOCKWISE:
+                actionDescription = "Grav C-wise";
+                break;
+            case SWITCH_MODE.COUNTER_CLOCKWISE:
+                actionDescription = "Grav Cntr C-wise";
+                break;
+            case SWITCH_MODE.FLIP:
+                actionDescription = "Grav Reverse";
+                break;
+        }
+    }
+
     void Update()
     {
         if (!isCooled)

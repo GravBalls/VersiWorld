@@ -41,11 +41,11 @@ public class TestInputHandler : MonoBehaviour
         UIHandler.linkButton(UIScript.UI_BUTTON.BUTTON_RED, redButtonCommand);
 
         yellowButtonCommand = redButtonItem.GetComponent<CommandParent>();
-        yellowButtonCommand.LinkInput(Color.red);
+        yellowButtonCommand.LinkInput(Color.yellow);
         UIHandler.linkButton(UIScript.UI_BUTTON.BUTTON_YELLOW, yellowButtonCommand);
 
         greenButtonCommand = redButtonItem.GetComponent<CommandParent>();
-        greenButtonCommand.LinkInput(Color.red);
+        greenButtonCommand.LinkInput(Color.green);
         UIHandler.linkButton(UIScript.UI_BUTTON.BUTTON_GREEN, greenButtonCommand);
     }
 	
