@@ -195,7 +195,7 @@ GameObject:
   - 33: {fileID: 176129097}
   - 65: {fileID: 176129096}
   - 23: {fileID: 176129095}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -402,7 +402,7 @@ GameObject:
   - 33: {fileID: 597604245}
   - 65: {fileID: 597604244}
   - 23: {fileID: 597604243}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,7 +867,7 @@ GameObject:
   - 33: {fileID: 926773109}
   - 65: {fileID: 926773108}
   - 23: {fileID: 926773107}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -942,7 +942,7 @@ GameObject:
   - 33: {fileID: 1011095812}
   - 65: {fileID: 1011095811}
   - 23: {fileID: 1011095810}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: floor (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1390,7 +1390,8 @@ GameObject:
   - 33: {fileID: 1381210562}
   - 65: {fileID: 1381210561}
   - 23: {fileID: 1381210560}
-  m_Layer: 0
+  - 114: {fileID: 1381210564}
+  m_Layer: 9
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1454,6 +1455,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
+--- !u!114 &1381210564
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1381210559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7582a30a6e119a419021a72d46dc23f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bounceForce: 10
+  isActivatable: 1
 --- !u!1 &1398756926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1682,7 +1696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff3fa79d90fe214fa8cde315df2cc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueButtonItem: {fileID: 2145189102}
+  blueButtonItem: {fileID: 1381210559}
   redButtonItem: {fileID: 0}
   yellowButtonItem: {fileID: 0}
   greenButtonItem: {fileID: 0}
