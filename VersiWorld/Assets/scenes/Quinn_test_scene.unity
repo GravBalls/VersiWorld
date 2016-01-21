@@ -1607,7 +1607,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ff3fa79d90fe214fa8cde315df2cc1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blueButtonItem: {fileID: 1398756926}
+  blueButtonItem: {fileID: 2145189102}
+  redButtonItem: {fileID: 0}
+  yellowButtonItem: {fileID: 0}
+  greenButtonItem: {fileID: 0}
   UILinkHandler: {fileID: 1534153653}
 --- !u!4 &1586833075
 Transform:
