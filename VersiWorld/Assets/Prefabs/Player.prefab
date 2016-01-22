@@ -12,6 +12,7 @@ GameObject:
   - 135: {fileID: 13553036}
   - 23: {fileID: 2305306}
   - 54: {fileID: 5492696}
+  - 114: {fileID: 11461646}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -41,7 +42,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 2100000, guid: 2c9d69d0374425d4d8ffdfd70030c293, type: 2}
+  - {fileID: 2100000, guid: 20c2312f0fa6160439c12241f8f04fb6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -79,6 +80,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 56
   m_CollisionDetection: 0
+--- !u!114 &11461646
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 110830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22e77544446066640b636545794a1d88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isActivatable: 0
+  startingMaterialName: Mat Does Not Change
+  startingMaterial: {fileID: 13400000, guid: aa766c6db69b1d3468486331e29f7437, type: 2}
+  startingColor: {r: .490196109, g: .490196109, b: .490196109, a: 1}
+  endingMaterialName: Mat Does Not Change
+  endingMaterial: {fileID: 13400000, guid: aa766c6db69b1d3468486331e29f7437, type: 2}
+  endingColor: {r: .490196079, g: .490196079, b: .490196079, a: 1}
 --- !u!135 &13553036
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -105,6 +124,60 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 20c2312f0fa6160439c12241f8f04fb6, type: 2}
+    - target: {fileID: 0}
+      propertyPath: startingMaterial
+      value: 
+      objectReference: {fileID: 13400000, guid: aa766c6db69b1d3468486331e29f7437,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: endingMaterial
+      value: 
+      objectReference: {fileID: 13400000, guid: aa766c6db69b1d3468486331e29f7437,
+        type: 2}
+    - target: {fileID: 0}
+      propertyPath: endingColor.r
+      value: .490196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: endingColor.g
+      value: .490196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: endingColor.b
+      value: .490196079
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: endingColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startingColor.r
+      value: .490196109
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startingColor.g
+      value: .490196109
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startingColor.b
+      value: .490196109
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startingColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: startingMaterialName
+      value: Mat Does Not Change
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: endingMaterialName
+      value: Mat Does Not Change
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
