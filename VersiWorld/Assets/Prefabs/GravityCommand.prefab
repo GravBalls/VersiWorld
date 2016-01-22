@@ -40,8 +40,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: 10
-  coolDownTimer: 1
-  currentDirection: 0
+  coolDownTimer: .100000001
+  currentDirection: 2
   currentMode: 0
 --- !u!1001 &100100000
 Prefab:

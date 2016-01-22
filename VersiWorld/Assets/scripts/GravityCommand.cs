@@ -31,7 +31,7 @@ public class GravityCommand : CommandParent
     private float currentCoolDownTime = 0;
     private bool isCooled = true;
 
-    void Start ()
+    void Awake ()
     {
         switch (currentMode)
         {
@@ -127,7 +127,7 @@ public class GravityCommand : CommandParent
 
     }
 
-    void ChangeGravityDirection(DIRECTION newDirection)
+    public void ChangeGravityDirection(DIRECTION newDirection)
     {
         Vector3 grav = Vector3.zero;
         switch (newDirection)
