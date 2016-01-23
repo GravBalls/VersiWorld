@@ -17,7 +17,7 @@ public class GenerateObstacles : MonoBehaviour
         prefabHalfWidth = prefab.GetComponent<Collider>().bounds.size.x * 0.5f;
         for (int i = 0; i < quantity; i++)
         {
-            GameObject obstacle = Instantiate(prefab, GetRandomSpawnPosition(), Quaternion.identity) as GameObject;
+            GameObject obstacle = Instantiate(prefab, GetRandomSpawnPosition(), Quaternion.Euler(Vector3.forward * Random.Range(30, 60))) as GameObject;
             obstacles.Add(obstacle);
         }
 
