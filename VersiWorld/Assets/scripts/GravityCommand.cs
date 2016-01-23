@@ -2,34 +2,23 @@
 using System.Collections;
 
 
-
+[RequireComponent(typeof(GravityController))]
 public class GravityCommand : CommandParent
 {
-    public enum DIRECTION
-    {
-        UP,
-        RIGHT,
-        DOWN,
-        LEFT
-    }
-
-    public enum SWITCH_MODE
+     public enum SWITCH_MODE
     {
         CLOCKWISE,
         COUNTER_CLOCKWISE,
         FLIP
     }
 
-    [Range(0, Mathf.Infinity)]
-    [Tooltip("Absolute value of gravity value in axis of choice.")]
-    public float gravity;
-    public float coolDownTimer;
+       public float coolDownTimer;
 
-    public DIRECTION currentDirection;
     public SWITCH_MODE currentMode;
 
     private float currentCoolDownTime = 0;
     private bool isCooled = true;
+    private GravityController gravControl;
 
     void Awake ()
     {
@@ -45,7 +34,11 @@ public class GravityCommand : CommandParent
                 actionDescription = "Grav Reverse";
                 break;
         }
-        currentDirection = DIRECTION.DOWN;
+
+        gravControl = GetComponent<GravityController>();
+        gravControl.CurrentDirection = GravityController.Direction.DOWN;
+
+
     }
 
     void Update()
@@ -72,82 +65,60 @@ public class GravityCommand : CommandParent
             switch (currentMode)
             {
                 case SWITCH_MODE.CLOCKWISE:
-                    switch (currentDirection)
+                    switch (gravControl.CurrentDirection)
                     {
-                        case DIRECTION.DOWN:
-                            ChangeGravityDirection(DIRECTION.LEFT);
+                        case GravityController.Direction.DOWN:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.LEFT);
                             break;
-                        case DIRECTION.LEFT:
-                            ChangeGravityDirection(DIRECTION.UP);
+                        case GravityController.Direction.LEFT:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.UP);
                             break;
-                        case DIRECTION.UP:
-                            ChangeGravityDirection(DIRECTION.RIGHT);
+                        case GravityController.Direction.UP:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.RIGHT);
                             break;
-                        case DIRECTION.RIGHT:
-                            ChangeGravityDirection(DIRECTION.DOWN);
+                        case GravityController.Direction.RIGHT:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.DOWN);
                             break;
                     }
                     break;
                 case SWITCH_MODE.COUNTER_CLOCKWISE:
-                    switch (currentDirection)
+                    switch (gravControl.CurrentDirection)
                     {
-                        case DIRECTION.DOWN:
-                            ChangeGravityDirection(DIRECTION.RIGHT);
+                        case GravityController.Direction.DOWN:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.RIGHT);
                             break;
-                        case DIRECTION.RIGHT:
-                            ChangeGravityDirection(DIRECTION.UP);
+                        case GravityController.Direction.RIGHT:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.UP);
                             break;
-                        case DIRECTION.UP:
-                            ChangeGravityDirection(DIRECTION.LEFT);
+                        case GravityController.Direction.UP:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.LEFT);
                             break;
-                        case DIRECTION.LEFT:
-                            ChangeGravityDirection(DIRECTION.DOWN);
+                        case GravityController.Direction.LEFT:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.DOWN);
                             break;
                     }
                     break;
                 case SWITCH_MODE.FLIP:
-                    switch (currentDirection)
+                    switch (gravControl.CurrentDirection)
                     {
-                        case DIRECTION.DOWN:
-                            ChangeGravityDirection(DIRECTION.UP);
+                        case GravityController.Direction.DOWN:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.UP);
                             break;
-                        case DIRECTION.UP:
-                            ChangeGravityDirection(DIRECTION.DOWN);
+                        case GravityController.Direction.UP:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.DOWN);
                             break;
-                        case DIRECTION.RIGHT:
-                            ChangeGravityDirection(DIRECTION.LEFT);
+                        case GravityController.Direction.RIGHT:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.LEFT);
                             break;
-                        case DIRECTION.LEFT:
-                            ChangeGravityDirection(DIRECTION.RIGHT);
+                        case GravityController.Direction.LEFT:
+                            gravControl.ChangeGravityDirection(GravityController.Direction.RIGHT);
                             break;
                     }
                     break;
             }
+            isCooled = false;
         }
 
-    }
-
-    public void ChangeGravityDirection(DIRECTION newDirection)
-    {
-        Vector3 grav = Vector3.zero;
-        switch (newDirection)
-        {
-            case DIRECTION.DOWN:
-                grav.y = -gravity;
-                break;
-            case DIRECTION.UP:
-                grav.y = gravity;
-                break;
-            case DIRECTION.RIGHT:
-                grav.x = gravity;
-                break;
-            case DIRECTION.LEFT:
-                grav.x = -gravity;
-                break;
-        }
-        Physics.gravity = grav;
-        currentDirection = newDirection;
-        isCooled = false;
     }
 
 }

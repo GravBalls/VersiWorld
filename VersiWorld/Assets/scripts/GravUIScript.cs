@@ -5,7 +5,7 @@ using System.Collections;
 public class GravUIScript : MonoBehaviour {
 
     Image gravImage;
-    GravityCommand gravControler = null;
+    GravityController gravControler = null;
 
     public Sprite iconUp;
     public Sprite iconRight;
@@ -15,7 +15,7 @@ public class GravUIScript : MonoBehaviour {
     // Use this for initialization
     void Start () {
         gravImage = GetComponentInChildren<Image>();
-        gravControler = FindObjectOfType<GravityCommand>();
+        gravControler = FindObjectOfType<GravityController>();
         if (gravControler == null) {
             gravImage.sprite = iconDown;
         }
@@ -24,18 +24,18 @@ public class GravUIScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         if (gravControler != null) {
-            switch (gravControler.currentDirection)
+            switch (gravControler.CurrentDirection)
             {
-                case GravityCommand.DIRECTION.UP:
+                case GravityController.Direction.UP:
                     gravImage.sprite = iconUp;
                     break;
-                case GravityCommand.DIRECTION.RIGHT:
+                case GravityController.Direction.RIGHT:
                     gravImage.sprite = iconRight;
                     break;
-                case GravityCommand.DIRECTION.DOWN:
+                case GravityController.Direction.DOWN:
                     gravImage.sprite = iconDown;
                     break;
-                case GravityCommand.DIRECTION.LEFT:
+                case GravityController.Direction.LEFT:
                     gravImage.sprite = iconLeft;
                     break;
             }

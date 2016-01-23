@@ -8,8 +8,9 @@ public class BlackHole : MonoBehaviour
 
     GameObject player;
     Vector3 playerStartPosition;
-    GravityCommand.DIRECTION startDirection;
-    GravityCommand gravScript;
+
+    GravityController gravControl;
+    GravityController.Direction startDirection;
 
     // Use this for initialization
     void Start()
@@ -17,8 +18,8 @@ public class BlackHole : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         Debug.Assert(player != null, "Could not find player");
         playerStartPosition = player.transform.position;
-        gravScript = gravityCommand.GetComponent<GravityCommand>() as GravityCommand;
-        startDirection = gravScript.currentDirection;
+        gravControl = gravityCommand.GetComponent<GravityController>();
+        startDirection = gravControl.CurrentDirection;
     }
 
 
@@ -28,7 +29,7 @@ public class BlackHole : MonoBehaviour
         {
             player.SetActive(false);
             player.transform.position = playerStartPosition;
-            gravScript.ChangeGravityDirection(startDirection);
+            gravControl.ChangeGravityDirection(startDirection);
             player.GetComponent<Rigidbody>().velocity = Vector3.zero;
             player.SetActive(true);
         }
