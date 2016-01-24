@@ -1,0 +1,11 @@
+# Site settings
+title: Project VersiWorld
+email: JefJohMS@gmail.com
+description: #>  this means to ignore newlines until "baseurl:"
+  Project site for the development of the game VersiWorld (working title), a 2.5D physics based game.
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://gravballs.github.io/VersiWorld/" # the base hostname & protocol for your site
+github_username:  gravballs
+
+# Build settings
+markdown: kramdown
