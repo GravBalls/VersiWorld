@@ -1,27 +1,38 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
-public class GenerateObstacles : MonoBehaviour
+public class GenerateTargets : MonoBehaviour
 {
     public int quantity;
     public Transform minPosition;
     public Transform maxPosition;
     public GameObject prefab;
     public float placementBuffer = .01f;
-    
 
-    List<GameObject> obstacles = new List<GameObject>();
+
+    List<GameObject> targets = new List<GameObject>();
     float prefabHalfWidth;
     void Awake()
     {
         prefabHalfWidth = prefab.GetComponent<Collider>().bounds.size.x * 0.5f;
+    }
+
+    public List<Target> Generate()
+    {
         for (int i = 0; i < quantity; i++)
         {
-            GameObject obstacle = Instantiate(prefab, GetRandomSpawnPosition(), Quaternion.Euler(Vector3.forward * Random.Range(30, 60))) as GameObject;
-            obstacles.Add(obstacle);
+            GameObject target = Instantiate(prefab, GetRandomSpawnPosition(), Quaternion.Euler(Vector3.forward * Random.Range(30, 60))) as GameObject;
+            targets.Add(target);
         }
-
+        List<Target> result = new List<Target>();
+        foreach(GameObject target in targets)
+        {
+            Target t = target.GetComponent<Target>();
+            result.Add(t);
+        }
+        return result;
     }
+
 
     Vector3 GetRandomSpawnPosition()
     {
@@ -31,12 +42,12 @@ public class GenerateObstacles : MonoBehaviour
         {
             result = minPosition.position;
             result.x = Random.Range(minPosition.position.x, maxPosition.position.x);
-           if(CheckIfClear(result))
+            if (CheckIfClear(result))
             {
                 return result;
             }
             Debug.Assert(++fuse < 100, "Safety fuse blown on infinite loop.");
-            
+
 
         }
     }
@@ -44,10 +55,10 @@ public class GenerateObstacles : MonoBehaviour
     bool CheckIfClear(Vector3 position)
     {
         bool result = true;
-        foreach (GameObject obstacle in obstacles)
+        foreach (GameObject target in targets)
         {
-            float minX = obstacle.transform.position.x - (prefabHalfWidth + placementBuffer);
-            float maxX = obstacle.transform.position.x + (prefabHalfWidth + placementBuffer);
+            float minX = target.transform.position.x - (prefabHalfWidth + placementBuffer);
+            float maxX = target.transform.position.x + (prefabHalfWidth + placementBuffer);
             if (position.x > minX && position.x < maxX)//obstacle already there no need to search anymore get another random and try again
             {
                 result = false;

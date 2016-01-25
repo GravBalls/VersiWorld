@@ -16,7 +16,7 @@ GameObject:
   - 199: {fileID: 19945108}
   - 198: {fileID: 19848618}
   m_Layer: 0
-  m_Name: obstacle
+  m_Name: Target
   m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,6 +105,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29f87b0540a41f84587fd4e91eb783d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHuntTime: 5
+  defaultMaterial: {fileID: 2100000, guid: 6548db06a8492884aba4ca685f759359, type: 2}
+  hunterMaterial: {fileID: 2100000, guid: 259a2513982f98245b35612305850ec4, type: 2}
 --- !u!198 &19848618
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -1270,6 +1273,18 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_Mass
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: defaultMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 6548db06a8492884aba4ca685f759359, type: 2}
+    - target: {fileID: 0}
+      propertyPath: hunterMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 259a2513982f98245b35612305850ec4, type: 2}
+    - target: {fileID: 0}
+      propertyPath: maxHuntTime
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
