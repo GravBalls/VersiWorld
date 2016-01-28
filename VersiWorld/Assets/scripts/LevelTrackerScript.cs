@@ -5,12 +5,18 @@ public class LevelTrackerScript : MonoBehaviour {
 
     public bool ignoreNextLevelCalls = false;
     public bool debugControlsAllowed = false;
+    public bool readFromLevelKernal = false;
+
+    public float levelTransitionDelay = 2.0f;
+    float transitionTime = 0.0f;
+    bool transitionActive = false;
 
     //int initLevel = 0;
     int firstLevel = 1;
-    int lastLevel = 3;
+    int lastLevel = 1;
 
     int currentLevel;
+    Kernal currentKernal = null;
 
 	// Use this for initialization
 	void Start () {
@@ -34,6 +40,44 @@ public class LevelTrackerScript : MonoBehaviour {
                 Debug.Log("Forcing Next Level...");
                 nextLevel();
             }
+        }
+
+        if (readFromLevelKernal)
+        {
+            if (currentKernal.GameOver && !transitionActive)
+            {
+                transitionActive = true;
+                transitionTime = levelTransitionDelay;
+                Debug.Log("Level End Detected, Transition in: " + levelTransitionDelay + " Seconds.");
+            }
+        }
+
+        if (transitionActive)
+        {
+            transitionTime -= Time.deltaTime;
+            if (transitionTime <= 0.0f)
+            {
+                if (currentKernal.player.IsAlive)
+                {
+                    Debug.Log("Level Complete Detected");
+                    nextLevel();
+                }
+                else
+                {
+                    Debug.Log("Level Failure Detected");
+                    resetLevel();
+                }
+                transitionActive = false;
+            }
+        }
+    }
+
+    void OnLevelWasLoaded()
+    {
+        if (readFromLevelKernal)
+        {
+            currentKernal = FindObjectOfType<Kernal>();
+            Debug.Log("New Kernal Connected");
         }
     }
 

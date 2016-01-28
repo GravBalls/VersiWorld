@@ -5,11 +5,11 @@ using System.Collections.Generic;
 public class Kernal : MonoBehaviour 
 {
     public static List<Target> targets;
-    public static bool GameOver = false;
+    public bool GameOver = false;
 
     GenerateTargets genTargets;
     TimeUI timer;
-    Player player;
+    public Player player;
     Image youLose;
 
     void Awake()
@@ -38,7 +38,7 @@ public class Kernal : MonoBehaviour
 
         if (GameOver)
         {
-            Debug.Log("we dead.");
+            //Debug.Log("we dead.");
         }
 
 
