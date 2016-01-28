@@ -7,7 +7,7 @@ public class TimeUI : MonoBehaviour
 {
     Text time;
     float timer = 0;
-    public static bool isRunning = true;
+    public bool isRunning = true;
     
 
     void Awake()

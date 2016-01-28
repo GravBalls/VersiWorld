@@ -24,61 +24,48 @@ public class TestInputHandler : MonoBehaviour
     string yellowButton = "Y";
     string greenButton = "A";
 
-    public GameObject UILinkHandler = null;
-    UIScript UIHandler = null;
+    public GameObject UILinkHandler;
+    UIScript UIHandler;
 
     // Use this for initialization
     void Start()
     {
-        if (UILinkHandler != null)
-        {
-            UIHandler = UILinkHandler.GetComponent<UIScript>();
-        }
+        UIHandler = UILinkHandler.GetComponent<UIScript>();
 
+
+        
         if (blueButtonItem != null)
         {
             blueButtonCommand = blueButtonItem.GetComponent<CommandParent>();
             blueButtonCommand.LinkInput(Color.blue);
-            if (UIHandler != null)
-            {
-                UIHandler.linkButton(UIScript.UI_BUTTON.BUTTON_BLUE, blueButtonCommand);
-            }
+            UIHandler.linkButton(UIScript.UI_BUTTON.BUTTON_BLUE, blueButtonCommand);
         }
 
 
-
+        
         if (redButtonItem != null)
         {
             redButtonCommand = redButtonItem.GetComponent<CommandParent>();
             redButtonCommand.LinkInput(Color.red);
-            if (UIHandler != null)
-            {
-                UIHandler.linkButton(UIScript.UI_BUTTON.BUTTON_RED, redButtonCommand);
-            }
+            UIHandler.linkButton(UIScript.UI_BUTTON.BUTTON_RED, redButtonCommand);
         }
 
 
-
+       
         if (yellowButtonItem != null)
         {
             yellowButtonCommand = redButtonItem.GetComponent<CommandParent>();
             yellowButtonCommand.LinkInput(Color.yellow);
-            if (UIHandler != null)
-            {
-                UIHandler.linkButton(UIScript.UI_BUTTON.BUTTON_YELLOW, yellowButtonCommand);
-            }
+            UIHandler.linkButton(UIScript.UI_BUTTON.BUTTON_YELLOW, yellowButtonCommand);
         }
 
 
-
+        
         if (greenButtonItem != null)
         {
             greenButtonCommand = redButtonItem.GetComponent<CommandParent>();
             greenButtonCommand.LinkInput(Color.green);
-            if (UIHandler != null)
-            {
-                UIHandler.linkButton(UIScript.UI_BUTTON.BUTTON_GREEN, greenButtonCommand);
-            }
+            UIHandler.linkButton(UIScript.UI_BUTTON.BUTTON_GREEN, greenButtonCommand);
         }
 
     }
@@ -86,19 +73,19 @@ public class TestInputHandler : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (blueButtonCommand != null && Input.GetButtonDown(blueButton))
+        if (blueButtonCommand != null && Input.GetAxis(blueButton) > 0)
         {
             blueButtonCommand.Activate();
         }
-        if (redButtonCommand != null && Input.GetButtonDown(redButton))
+        if (redButtonCommand != null && Input.GetAxis(redButton) > 0)
         {
             redButtonCommand.Activate();
         }
-        if (yellowButtonCommand != null && Input.GetButtonDown(yellowButton))
+        if (yellowButtonCommand != null && Input.GetAxis(yellowButton) > 0)
         {
             yellowButtonCommand.Activate();
         }
-        if (greenButtonCommand != null && Input.GetButtonDown(greenButton))
+        if (greenButtonCommand != null && Input.GetAxis(greenButton) > 0)
         {
             greenButtonCommand.Activate();
         }
