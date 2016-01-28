@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="../stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="../stylesheets/print.css" media="print">
+
+    <title>Production Brief</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Versiworld</h1>
+        <h2>Physics project for AIE</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/GravBalls/VersiWorld/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/GravBalls/VersiWorld/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/GravBalls/VersiWorld" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="Production Notes" class="anchor" href="#production-notes" aria-hidden="true"><span class="octicon octicon-link"></span></a>Production Notes - Jeffrey M Johnson</h1>
+	<p>As we got started with planning, Quinn and I sketched out a plan on the whiteboard.  Multi-level puzzler that uses different physics mechanics to effect the environment 
+	and player.  A task list was setup on Trello.com and we got started. Working on the structure of the objects and trying to ensure a nice abstract class was or first task, 
+	and we spent about a week implementing different mechanics in a prototype setting.   This order of tasks I believe was a mistake.  I think we took too long thinking about 
+	engineering a perfect code base instead of trying to get something up and able to be play tested as quick as possible.</p>
+	
+	<p>Over the weekend, I had a thought, and built a quick and dirty little prototype of a level and started to play test it.  I actually thought it was kind of fun.  It wasn’t 
+	exactly what we had specified in our production brief, but the main gist I think was there.  The new design is a multi-level game with a rectangular border, a single player 
+	object (a sphere) and a number of targets / hunters placed in scene in a semi random way.  When he game starts, gravity is normal (things fall from top to bottom, y-axis) and 
+	the player is placed at the bottom of the border and some number of targets are spawned “mid-air”. The user controls the environment by using the arrow keys (or controller D-pad) 
+	to change the direction of gravity in the world to whichever direction the user chooses.  The target/hunters and player then succumb to gravity’s forces appropriately.  The goal 
+	is for the player to ‘collect’ all targets by colliding with them in a timed session. Inside the borders are 1 or more ‘bumpers’ who give something interesting for the 
+	target/hunters and player to bounce off of.  The bumper is 2 cubes in same position, with one of them rotated 45 degrees to make a ‘star’ pattern. This gives many angles 
+	for the objects to react from.  If a target hit’s the bumper it is changed to a hunter. Now if player collides the player fails and the level ends. This makes some interesting 
+	dynamics between not having direct control of your player, and the randomness of the bounce when the targets (cube) bounce off border or bumpers.</p>
+	
+	<h3>Lessons</h3>
+	<p>I upgraded my Unity version to the latest rev without thinking about it.  Of course there was a breaking bug in it with regards to the use of my particles.  I had to rollback 
+	top previous build num and this causes some issues syncing the project.  I had lost assets, and generally an unhappy unity.  I rolled back the project a couple of check-ins 
+	(before I upgraded the Unity) and copied it over. Now all is well again. Don’t play with your tools when you’re in the middle of a project, this is a life lesson.</p>
+      </section>
+    </div>
+  </body>
+</html>
