@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
             Target targetScript = other.gameObject.GetComponent<Target>();
             if(targetScript.IsHunter)
             {
+                TimeUI.isRunning = false;
                 StartCoroutine(Die());
             }
         }

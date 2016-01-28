@@ -8,15 +8,15 @@ public class Kernal : MonoBehaviour
     public static bool GameOver = false;
 
     GenerateTargets genTargets;
-    TimeUI timer;
-    Player player;
+    public static Player player;
     Image youLose;
 
     void Awake()
     {
+        DontDestroyOnLoad(this);
+
         genTargets = GetComponentInChildren<GenerateTargets>();
         targets = genTargets.Generate();
-        timer = GameObject.FindObjectOfType<TimeUI>();
         player = GameObject.FindObjectOfType<Player>();
         youLose = GameObject.FindWithTag("YouLose").GetComponent<Image>();
         Debug.Assert(youLose.name == "YouLose");
@@ -26,21 +26,32 @@ public class Kernal : MonoBehaviour
     {
         if (targets.Count == 0)
         {
-            timer.isRunning = false;
+            TimeUI.isRunning = false;
             GameOver = true;
             
         }                       
         else if(!player.IsAlive)
         {
+            TimeUI.isRunning = false;
             GameOver = true;
             youLose.enabled = true;
         }
 
         if (GameOver)
         {
+            KillTargets();
             Debug.Log("we dead.");
         }
 
 
+    }
+
+    public static void KillTargets()
+    {
+        for(int i = 0; i < targets.Count; i++)
+        {
+            Destroy(targets[i].gameObject);
+        }
+        targets.Clear();
     }
 }
