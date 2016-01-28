@@ -7,6 +7,7 @@ TagManager:
   - DPad
   - Target
   - Obstacle
+  - YouLose
   layers:
   - Default
   - TransparentFX

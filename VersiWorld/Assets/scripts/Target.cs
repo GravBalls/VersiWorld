@@ -39,8 +39,7 @@ public class Target : MonoBehaviour
 
     void Awake()
     {
-        //particles = GetComponent<ParticleSystem>();
-        particles = GetComponentInChildren<ParticleSystem>();
+       particles = GetComponentInChildren<ParticleSystem>();
         renderer = GetComponent<Renderer>();
         rBody = GetComponent<Rigidbody>();
         IsHunter = false;
