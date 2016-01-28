@@ -6,6 +6,8 @@ public class DPad : MonoBehaviour
 {
     public GravityController gravControl;
 
+    public bool disableDisplay = false;
+
     List<Image> images;
     Direction currentDirection;
 
@@ -21,6 +23,13 @@ public class DPad : MonoBehaviour
     {
         GameObject dPad = GameObject.FindWithTag("DPad");
         images = new List<Image>(dPad.GetComponentsInChildren<Image>());
+        if (disableDisplay)
+        {
+            ChangeAlpha(images[0], 0);
+            ChangeAlpha(images[1], 0);
+            ChangeAlpha(images[2], 0);
+            ChangeAlpha(images[3], 0);
+        }
         currentDirection = Direction.DOWN;
     }
 	void Update()
@@ -60,8 +69,11 @@ public class DPad : MonoBehaviour
 
     void ChangeDirection(Direction newDirection)
     {
-        ChangeAlpha(images[(int)currentDirection], .5f);
-        ChangeAlpha(images[(int)newDirection], 1);
+        if (!disableDisplay)
+        {
+            ChangeAlpha(images[(int)currentDirection], .5f);
+            ChangeAlpha(images[(int)newDirection], 1);
+        }
         currentDirection = newDirection;
     }
 
