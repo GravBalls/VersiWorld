@@ -4,6 +4,7 @@ using System.Collections.Generic;
 public class GenerateTargets : MonoBehaviour
 {
     public int quantity;
+    public int hunterTime;
     public Transform minPosition;
     public Transform maxPosition;
     public GameObject prefab;
@@ -22,6 +23,7 @@ public class GenerateTargets : MonoBehaviour
         for (int i = 0; i < quantity; i++)
         {
             GameObject target = Instantiate(prefab, GetRandomSpawnPosition(), Quaternion.Euler(Vector3.forward * Random.Range(30, 60))) as GameObject;
+            target.GetComponent<Target>().maxHuntTime = hunterTime;
             targets.Add(target);
         }
         List<Target> result = new List<Target>();
