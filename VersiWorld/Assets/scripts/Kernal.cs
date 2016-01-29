@@ -9,6 +9,7 @@ public class Kernal : MonoBehaviour
 
     GenerateTargets genTargets;
     TimeUI timer;
+    [HideInInspector]
     public Player player;
     Image youLose;
 

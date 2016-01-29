@@ -21,6 +21,7 @@ public class DPad : MonoBehaviour
     {
         GameObject dPad = GameObject.FindWithTag("DPad");
         images = new List<Image>(dPad.GetComponentsInChildren<Image>());
+        gravControl = GameObject.FindObjectOfType<GravityController>();
         currentDirection = Direction.DOWN;
     }
 	void Update()
