@@ -13,15 +13,14 @@ public class MaterialSwapScript : CommandParent {
     public string endingMaterialName;
     public PhysicMaterial endingMaterial;
     public Color endingColor;
-
-    BoxCollider myBoxCollider;
+    Collider myCollider;
     Material myMaterial;
 
     // Use this for initialization
     void Start () {
-        myBoxCollider = GetComponent<BoxCollider>();
+        myCollider = GetComponent<Collider>();
 
-        myBoxCollider.material = startingMaterial;
+        myCollider.material = startingMaterial;
         
         //default link color
         actionDescription = startingMaterialName;
@@ -38,13 +37,13 @@ public class MaterialSwapScript : CommandParent {
         {
             if (isFirstState)
             {
-                myBoxCollider.material = endingMaterial;
+                myCollider.material = endingMaterial;
                 actionDescription = endingMaterialName;
                 myMaterial.color = endingColor;
             }
             else
             {
-                myBoxCollider.material = startingMaterial;
+                myCollider.material = startingMaterial;
                 actionDescription = startingMaterialName;
                 myMaterial.color = startingColor;
             }
