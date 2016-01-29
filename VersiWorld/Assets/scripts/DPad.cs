@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class DPad : MonoBehaviour 
 {
     public GravityController gravControl;
+    public bool hideDpad = false;
 
     List<Image> images;
     Direction currentDirection;
@@ -23,6 +24,14 @@ public class DPad : MonoBehaviour
         images = new List<Image>(dPad.GetComponentsInChildren<Image>());
         gravControl = GameObject.FindObjectOfType<GravityController>();
         currentDirection = Direction.DOWN;
+
+        if (hideDpad)
+        {
+            ChangeAlpha(images[0], 0);
+            ChangeAlpha(images[1], 0);
+            ChangeAlpha(images[2], 0);
+            ChangeAlpha(images[3], 0);
+        }
     }
 	void Update()
     {
@@ -61,8 +70,11 @@ public class DPad : MonoBehaviour
 
     void ChangeDirection(Direction newDirection)
     {
-        ChangeAlpha(images[(int)currentDirection], .5f);
-        ChangeAlpha(images[(int)newDirection], 1);
+        if (!hideDpad)
+        {
+            ChangeAlpha(images[(int)currentDirection], .5f);
+            ChangeAlpha(images[(int)newDirection], 1);
+        }
         currentDirection = newDirection;
     }
 
