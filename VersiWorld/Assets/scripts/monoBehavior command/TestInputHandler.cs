@@ -33,6 +33,10 @@ public class TestInputHandler : MonoBehaviour
         if (UILinkHandler != null)
         {
             UIHandler = UILinkHandler.GetComponent<UIScript>();
+            if (!UIHandler.hasStarted)
+            {
+                UIHandler.Start();
+            }
         }
 
         

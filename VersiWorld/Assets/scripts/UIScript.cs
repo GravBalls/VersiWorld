@@ -14,9 +14,16 @@ public class UIScript : MonoBehaviour {
     CommandParent yellowLink = null;
 
     static string defaultText = "Nothing";
+    [HideInInspector]
+    public bool hasStarted = false;
 
     // Use this for initialization
-    void Start () {
+    public void Start () {
+        if (hasStarted)
+        {
+            return;
+        }
+
         Text[] textComponents = GetComponentsInChildren<Text>();
         for (int i = 0; i < textComponents.Length; i++) {
             switch (textComponents[i].text[0]) {
@@ -38,6 +45,8 @@ public class UIScript : MonoBehaviour {
             }
             textComponents[i].text = defaultText;
         }
+
+        hasStarted = true;
 	}
 	
 	// Update is called once per frame
