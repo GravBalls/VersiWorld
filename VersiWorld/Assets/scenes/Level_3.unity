@@ -584,6 +584,10 @@ Prefab:
       propertyPath: quantity
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11486084, guid: 2279477a93680f542a08a46db2fbc956, type: 2}
+      propertyPath: hunterTime
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2279477a93680f542a08a46db2fbc956, type: 2}
   m_IsPrefabParent: 0

@@ -115,7 +115,7 @@ MonoBehaviour:
   ignoreNextLevelCalls: 0
   debugControlsAllowed: 1
   readFromLevelKernal: 1
-  levelTransitionDelay: 4
+  levelTransitionDelay: 3
 --- !u!4 &1519535092
 Transform:
   m_ObjectHideFlags: 0

@@ -44,7 +44,7 @@ public class LevelTrackerScript : MonoBehaviour {
 
         if (readFromLevelKernal)
         {
-            if (currentKernal.GameOver && !transitionActive)
+            if (currentKernal != null && currentKernal.GameOver && !transitionActive)
             {
                 transitionActive = true;
                 transitionTime = levelTransitionDelay;
