@@ -317,10 +317,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActivatable: 1
-  startingMaterialName: Become bouncy
+  startingMaterialName: Become Bouncy
   startingMaterial: {fileID: 13400000, guid: aa766c6db69b1d3468486331e29f7437, type: 2}
   startingColor: {r: 1, g: .16911763, b: .16911763, a: 1}
-  endingMaterialName: Return to normal
+  endingMaterialName: Return To Normal
   endingMaterial: {fileID: 13400000, guid: e8c9210d393046c49870d20f8cce03e6, type: 2}
   endingColor: {r: .463235319, g: 0, b: 0, a: 0}
 --- !u!224 &458695315 stripped

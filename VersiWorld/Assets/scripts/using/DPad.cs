@@ -24,6 +24,7 @@ public class DPad : MonoBehaviour
         images = new List<Image>(dPad.GetComponentsInChildren<Image>());
         gravControl = GameObject.FindObjectOfType<GravityController>();
         currentDirection = Direction.DOWN;
+        gravControl.ChangeGravityDirection(GravityController.Direction.DOWN);
 
         if (hideDpad)
         {
