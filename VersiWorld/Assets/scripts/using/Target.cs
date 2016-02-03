@@ -5,6 +5,7 @@ public class Target : MonoBehaviour
 {
     ParticleSystem particles;
     new Renderer renderer;
+    new BoxCollider collider;
     Rigidbody rBody;
 
     public bool IsHunter
@@ -42,6 +43,7 @@ public class Target : MonoBehaviour
        particles = GetComponentInChildren<ParticleSystem>();
         renderer = GetComponent<Renderer>();
         rBody = GetComponent<Rigidbody>();
+        collider = GetComponent<BoxCollider>();
         IsHunter = false;
     }
     void Update()
@@ -91,6 +93,8 @@ public class Target : MonoBehaviour
     IEnumerator Die()
     {
         renderer.enabled = false;
+        collider.enabled = false;
+        rBody.detectCollisions = false;
         Kernal.targets.Remove(this);
         particles.Play();
         while (particles.isPlaying)

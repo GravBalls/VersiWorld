@@ -7,11 +7,15 @@ public class Player : MonoBehaviour
 
     new Renderer renderer;
     ParticleSystem particles;
+    new SphereCollider collider;
+    Rigidbody rbody;
 
     void Awake()
     {
         renderer = GetComponent<Renderer>();
         particles = GetComponentInChildren<ParticleSystem>();
+        collider = GetComponent<SphereCollider>();
+        rbody = GetComponent<Rigidbody>();
         IsAlive = true;
     }
 
@@ -30,6 +34,8 @@ public class Player : MonoBehaviour
     IEnumerator Die()
     {
         renderer.enabled = false;
+        collider.enabled = false;
+        rbody.detectCollisions = false;
         particles.Play();
         while(particles.isPlaying)
         {
