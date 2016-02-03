@@ -13,7 +13,7 @@ public class LevelTrackerScript : MonoBehaviour {
 
     //int initLevel = 0;
     int firstLevel = 1;
-    int lastLevel = 6;
+    int lastLevel = 7;
 
     int currentLevel;
     Kernal currentKernal = null;
