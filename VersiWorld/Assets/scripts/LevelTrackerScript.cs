@@ -85,6 +85,8 @@ public class LevelTrackerScript : MonoBehaviour {
             currentKernal = FindObjectOfType<Kernal>();
             Debug.Log("New Kernal Connected");
         }
+
+        transitionActive = false;
     }
 
     public void nextLevel() {
