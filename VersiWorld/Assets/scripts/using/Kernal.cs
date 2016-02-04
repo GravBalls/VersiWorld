@@ -12,6 +12,8 @@ public class Kernal : MonoBehaviour
     [HideInInspector]
     public Player player;
     Image youLose;
+    [SerializeField]
+    Sprite winAsset;
 
     void Awake()
     {
@@ -29,7 +31,8 @@ public class Kernal : MonoBehaviour
         {
             timer.isRunning = false;
             GameOver = true;
-            
+            youLose.sprite = winAsset;
+            youLose.enabled = true;
         }                       
         else if(!player.IsAlive)
         {

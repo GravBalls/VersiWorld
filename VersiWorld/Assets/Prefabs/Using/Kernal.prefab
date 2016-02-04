@@ -168,6 +168,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   GameOver: 0
   player: {fileID: 0}
+  winAsset: {fileID: 21300000, guid: 2ce2317065e5d5a4182ce08ed61f400d, type: 3}
 --- !u!114 &11486084
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -180,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   quantity: 7
+  hunterTime: 0
   minPosition: {fileID: 480194}
   maxPosition: {fileID: 488268}
   prefab: {fileID: 124068, guid: ac117c12fa8538546bd25ed7e5dc1cd0, type: 2}
@@ -190,7 +192,12 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: winAsset
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ce2317065e5d5a4182ce08ed61f400d,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 179524}

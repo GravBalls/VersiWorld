@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: ac45d1c95b594a54c86701448158c52d
-timeCreated: 1453596628
-licenseType: Free
+timeCreated: 1454607497
+licenseType: Pro
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - player: {instanceID: 0}
+  - winAsset: {fileID: 21300000, guid: 2ce2317065e5d5a4182ce08ed61f400d, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
