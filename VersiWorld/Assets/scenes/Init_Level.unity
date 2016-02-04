@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignoreNextLevelCalls: 0
-  debugControlsAllowed: 1
+  debugControlsAllowed: 0
   readFromLevelKernal: 1
   levelTransitionDelay: 3
 --- !u!4 &1519535092
