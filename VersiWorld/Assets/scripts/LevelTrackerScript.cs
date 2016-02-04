@@ -27,7 +27,13 @@ public class LevelTrackerScript : MonoBehaviour {
 	}
 
     void Update() {//consistent 
-        if(Input.GetKeyDown(KeyCode.R))
+        if (Input.GetButtonDown("Cancel"))
+        {
+            Debug.Log("Exiting Game");
+            Application.Quit();
+        }
+
+        if(Input.GetButtonDown("Submit"))
         {
             Debug.Log("Reloading Level...");
             resetLevel();
