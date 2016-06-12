@@ -12,8 +12,8 @@ public class LevelTrackerScript : MonoBehaviour {
     bool transitionActive = false;
 
     //int initLevel = 0;
-    int firstLevel = 1;
-    int lastLevel = 7;
+    int firstLevel = 2;
+    int lastLevel = 8;
 
     int currentLevel;
     Kernal currentKernal = null;
@@ -21,7 +21,7 @@ public class LevelTrackerScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         DontDestroyOnLoad(gameObject);
-        currentLevel = 0;
+        currentLevel = 1;
         Debug.Log("Loading First Level...");
         nextLevel();
 	}
